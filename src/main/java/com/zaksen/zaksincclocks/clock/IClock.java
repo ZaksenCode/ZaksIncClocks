@@ -19,4 +19,6 @@ public interface IClock {
         renderTime();
     }
 
+    String getType();
+
 }

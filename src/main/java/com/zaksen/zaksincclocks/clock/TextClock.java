@@ -20,4 +20,9 @@ public class TextClock extends AbstractClock {
     public void renderTime() {
         textDisplayEntity.setText(time);
     }
+
+    @Override
+    public String getType() {
+        return "text";
+    }
 }

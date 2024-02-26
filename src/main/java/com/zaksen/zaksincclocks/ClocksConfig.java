@@ -1,6 +1,8 @@
 package com.zaksen.zaksincclocks;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.block.data.BlockData;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.HashMap;
@@ -12,8 +14,8 @@ public class ClocksConfig {
     public final Map<String, String> messages = new HashMap<>();
     public final String clocksListFormat;
     public final int clocksListPerPage;
-    public final String fontName;
     public final int fontSize;
+    public final BlockData fontBlock;
 
     public ClocksConfig(FileConfiguration config) {
         timeZone = config.getString("time-zone");
@@ -24,15 +26,17 @@ public class ClocksConfig {
         newMessage("create-need-type-argument", config);
         newMessage("create-no-type-error", config);
         newMessage("create-success", config);
+        newMessage("remove-need-type-argument", config);
+        newMessage("list-show", config);
 
         clocksListFormat = config.getString("clocks-list-format");
         clocksListPerPage = config.getInt("clocks-list-per-page");
 
-        fontName = config.getString("font-name");
         fontSize = config.getInt("font-size");
+        fontBlock = Material.valueOf(config.getString("font-block")).createBlockData();
     }
 
     private void newMessage(String name, FileConfiguration from) {
-        messages.put(name, ChatColor.translateAlternateColorCodes('&', from.getString(name)));
+        messages.put(name, ChatColor.translateAlternateColorCodes('&', from.getString(String.format("messages.%s", name))));
     }
 }

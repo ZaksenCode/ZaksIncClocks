@@ -1,11 +1,13 @@
 package com.zaksen.zaksincclocks.clock;
 
+import com.zaksen.zaksincclocks.ClocksConfig;
 import com.zaksen.zaksincclocks.ZaksIncClocks;
 import org.bukkit.Location;
+import org.bukkit.Material;
 
-public class DigitalClock extends AbstractClock {
+public class AnalogClock extends AbstractClock {
 
-    public DigitalClock(int id, Location location) {
+    public AnalogClock(int id, Location location) {
         super(id, location);
     }
 
@@ -21,6 +23,6 @@ public class DigitalClock extends AbstractClock {
 
     @Override
     public String getType() {
-        return "digital";
+        return "analog";
     }
 }

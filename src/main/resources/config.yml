@@ -12,6 +12,8 @@ messages:
   create-need-type-argument: "Используя команду /clocks create вам так же необходимо указать тип часов [digital, analog, text]"
   create-no-type-error: "Указаный вам тип {type} не существует"
   create-success: "Был создан новый объект часов {type} с id: {id}"
+  remove-need-id-argument: "Используя команду /clocks remove вам так же необходимо указать id объекта часов"
+  list-show: "Список объектов часов в мире. Страница {page}:"
 
 # Настройка формата для команды '/clocks list'
 # Стандартное значение "{id} - {type} - {location}"
@@ -21,7 +23,7 @@ clocks-list-format: "{id} - {type} - {location}"
 # Стандартное значение 10
 clocks-list-per-page: 10
 
-# Настройка шрифта, кидать в формате .ttf в папку с конфигом плагина
-font-name: "sans-serif"
 # Настройка размера шрифта
 font-size: 6
+# Настройки блоков для шрифта
+font-block: "AMETHYST_BLOCK"

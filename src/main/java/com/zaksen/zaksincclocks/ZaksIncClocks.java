@@ -3,7 +3,6 @@ package com.zaksen.zaksincclocks;
 import com.zaksen.zaksincclocks.clock.ClockManager;
 import com.zaksen.zaksincclocks.commands.ClocksCommand;
 import com.zaksen.zaksincclocks.database.DatabaseManager;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
