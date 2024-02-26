@@ -1,0 +1,5 @@
+name: ZaksIncClocks
+version: '${project.version}'
+main: com.zaksen.zaksincclocks.ZaksIncClocks
+api-version: '1.20'
+authors: [Zaksen_]
