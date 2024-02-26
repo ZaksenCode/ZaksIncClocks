@@ -11,25 +11,28 @@ import org.slf4j.LoggerFactory;
 public final class ZaksIncClocks extends JavaPlugin {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(ZaksIncClocks.class);
-
-    static private ZaksIncClocks instance;
+    private static ZaksIncClocks instance;
+    private static ClocksConfig mainConfig;
 
     public static ZaksIncClocks getInstance() {
         return instance;
     }
 
     public static ClocksConfig getClocksConfig() {
-        return new ClocksConfig(instance.getConfig());
+        return mainConfig;
     }
 
     @Override
     public void onEnable() {
-        // Setup
-        instance = this;
-        DatabaseManager.getInstance().init();
-        ClockManager.getInstance().init();
         // Load default config
         saveDefaultConfig();
+
+        // Setup
+        instance = this;
+        mainConfig = new ClocksConfig(instance.getConfig());
+        DatabaseManager.getInstance().init();
+        ClockManager.getInstance().init();
+
         // Register command
         getCommand("clocks").setExecutor(new ClocksCommand());
         getCommand("clocks").setTabCompleter(new ClocksCommand());

@@ -8,8 +8,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
 
-import static com.zaksen.zaksincclocks.ZaksIncClocks.LOGGER;
-
 public class ClockManager {
     private static final ClockManager instance = new ClockManager();
     private Map<Integer, AbstractClock> clockMap = new HashMap<>();
@@ -48,6 +46,10 @@ public class ClockManager {
 
         cycleTask.cancel();
         cycleTask = null;
+    }
+
+    public int getClocksCount() {
+        return clockMap.size();
     }
 
     public void addClock(int id, AbstractClock clock) {

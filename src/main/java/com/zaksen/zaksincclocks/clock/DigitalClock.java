@@ -4,7 +4,7 @@ import org.bukkit.Location;
 
 public class DigitalClock extends AbstractClock {
 
-    protected DigitalClock(int id, Location location) {
+    public DigitalClock(int id, Location location) {
         super(id, location);
     }
 
