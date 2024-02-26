@@ -1,0 +1,24 @@
+# Настройка часового пояса для сервера
+time-zone: "Europe/Estonia"
+
+# Настройка формата для часов, принимает 3 агрумента hours, minutes, seconds в фигурных скобках -> {}.
+# Стандартное значение "{hours}:{minutes}:{seconds}"
+time-format: "{hours}:{minutes}:{seconds}"
+
+# Настройка различных сообщений плагина
+messages:
+  only-player-command: "Данная команда может быть вызвана только игроком"
+  asf: "asdasdsaf"
+
+# Настройка формата для команды '/clocks list'
+# Стандартное значение "{id} - {type} - {location}"
+clocks-list-format: "{id} - {type} - {location}"
+
+# Настройка количества часов для команды '/clocks list'
+# Стандартное значение 10
+clocks-list-per-page: 10
+
+# Настройка шрифта, кидать в формате .ttf в папку с конфигом плагина
+font-name: "sans-serif"
+# Настройка размера шрифта
+font-size: 6
