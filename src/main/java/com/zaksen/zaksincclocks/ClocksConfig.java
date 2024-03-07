@@ -12,8 +12,6 @@ public class ClocksConfig {
     public final String timeZone;
     public final String timeFormat;
     public final Map<String, String> messages = new HashMap<>();
-    public final String clocksListFormat;
-    public final int clocksListPerPage;
     public final int fontSize;
     public final BlockData fontBlock;
 
@@ -26,9 +24,6 @@ public class ClocksConfig {
         newMessage("create-need-type-argument", config);
         newMessage("create-no-type-error", config);
         newMessage("create-success", config);
-
-        clocksListFormat = config.getString("clocks-list-format");
-        clocksListPerPage = config.getInt("clocks-list-per-page");
 
         fontSize = config.getInt("font-size");
         fontBlock = Material.valueOf(config.getString("font-block")).createBlockData();

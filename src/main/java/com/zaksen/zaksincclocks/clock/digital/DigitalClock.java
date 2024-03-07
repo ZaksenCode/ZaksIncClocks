@@ -1,5 +1,6 @@
 package com.zaksen.zaksincclocks.clock.digital;
 
+import com.zaksen.zaksincclocks.ZaksIncClocks;
 import com.zaksen.zaksincclocks.clock.AbstractClock;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -12,6 +13,7 @@ public class DigitalClock extends AbstractClock {
 
     @Override
     public void renderTime() {
-        location.getWorld().setBlockData(location, Material.AMETHYST_BLOCK.createBlockData());
+        // TODO - Convert string into blocks
+        location.getWorld().setBlockData(location, ZaksIncClocks.getClocksConfig().fontBlock);
     }
 }
