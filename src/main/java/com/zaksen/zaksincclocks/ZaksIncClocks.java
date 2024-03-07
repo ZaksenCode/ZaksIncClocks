@@ -1,17 +1,13 @@
 package com.zaksen.zaksincclocks;
 
-import com.zaksen.zaksincclocks.clock.ClockManager;
-import com.zaksen.zaksincclocks.commands.ClocksCommand;
-import com.zaksen.zaksincclocks.database.DatabaseManager;
+import com.zaksen.zaksincclocks.command.ClocksCommand;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public final class ZaksIncClocks extends JavaPlugin {
 
-    public static final Logger LOGGER = LoggerFactory.getLogger(ZaksIncClocks.class);
     private static ZaksIncClocks instance;
     private static ClocksConfig mainConfig;
+    private static final ClockManager clockManager = new ClockManager();
 
     public static ZaksIncClocks getInstance() {
         return instance;
@@ -19,6 +15,10 @@ public final class ZaksIncClocks extends JavaPlugin {
 
     public static ClocksConfig getClocksConfig() {
         return mainConfig;
+    }
+
+    public static ClockManager getClockManager() {
+        return clockManager;
     }
 
     @Override
@@ -29,8 +29,8 @@ public final class ZaksIncClocks extends JavaPlugin {
         // Setup
         instance = this;
         mainConfig = new ClocksConfig(instance.getConfig());
-        DatabaseManager.getInstance().init();
-        ClockManager.getInstance().init();
+
+        clockManager.init();
 
         // Register command
         getCommand("clocks").setExecutor(new ClocksCommand());
@@ -40,10 +40,6 @@ public final class ZaksIncClocks extends JavaPlugin {
 
     @Override
     public void onDisable() {
-
-
-        // End
-        ClockManager.getInstance().stop();
-        DatabaseManager.getInstance().stop();
+        clockManager.stop();
     }
 }

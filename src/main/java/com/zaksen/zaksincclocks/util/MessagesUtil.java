@@ -1,4 +1,4 @@
-package com.zaksen.zaksincclocks.utils;
+package com.zaksen.zaksincclocks.util;
 
 import com.zaksen.zaksincclocks.ZaksIncClocks;
 import org.bukkit.command.CommandSender;

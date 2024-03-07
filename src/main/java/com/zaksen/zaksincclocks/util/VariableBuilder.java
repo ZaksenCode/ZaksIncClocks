@@ -1,12 +1,12 @@
-package com.zaksen.zaksincclocks.utils;
+package com.zaksen.zaksincclocks.util;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class VariablesBuilder {
+public class VariableBuilder {
     private Map<String, String> variablesMap = new HashMap<>();
 
-    public VariablesBuilder newEntry(String from, String to) {
+    public VariableBuilder newEntry(String from, String to) {
         variablesMap.put(from, to);
         return this;
     }

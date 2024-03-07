@@ -26,8 +26,6 @@ public class ClocksConfig {
         newMessage("create-need-type-argument", config);
         newMessage("create-no-type-error", config);
         newMessage("create-success", config);
-        newMessage("remove-need-type-argument", config);
-        newMessage("list-show", config);
 
         clocksListFormat = config.getString("clocks-list-format");
         clocksListPerPage = config.getInt("clocks-list-per-page");

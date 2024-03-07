@@ -8,20 +8,10 @@ time-format: "{hours}:{minutes}:{seconds}"
 # Настройка различных сообщений плагина
 messages:
   only-player-command: "Данная команда может быть вызвана только игроком"
-  enter-sub-command: "Для команды /clocks необзодима под команда, выберите одну из выпадающего списка! / clocks [subcommand]"
-  create-need-type-argument: "Используя команду /clocks create вам так же необходимо указать тип часов [digital, analog, text]"
+  enter-sub-command: "Для команды /clocks необходима доп. команда, выберите одну из выпадающего списка! / clocks [subcommand]"
+  create-need-type-argument: "Используя команду /clocks create вам так же необходимо указать тип часов [digital, text]"
   create-no-type-error: "Указаный вам тип {type} не существует"
-  create-success: "Был создан новый объект часов {type} с id: {id}"
-  remove-need-id-argument: "Используя команду /clocks remove вам так же необходимо указать id объекта часов"
-  list-show: "Список объектов часов в мире. Страница {page}:"
-
-# Настройка формата для команды '/clocks list'
-# Стандартное значение "{id} - {type} - {location}"
-clocks-list-format: "{id} - {type} - {location}"
-
-# Настройка количества часов для команды '/clocks list'
-# Стандартное значение 10
-clocks-list-per-page: 10
+  create-success: "Был создан новый объект часов {type}"
 
 # Настройка размера шрифта
 font-size: 6
