@@ -1,3 +1,6 @@
+
+# Конфиг почти не работает, нормально работает только сообщения
+
 # Настройка часового пояса для сервера
 time-zone: "Europe/Estonia"
 
@@ -17,3 +20,8 @@ messages:
 font-size: 6
 # Настройки блоков для шрифта
 font-block: "AMETHYST_BLOCK"
+
+char-size-x: 8
+char-size-y: 10
+
+char-gap: 1

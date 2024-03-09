@@ -2,6 +2,7 @@ package com.zaksen.zaksincclocks.clock.digital;
 
 import com.zaksen.zaksincclocks.ZaksIncClocks;
 import com.zaksen.zaksincclocks.clock.AbstractClock;
+import com.zaksen.zaksincclocks.util.TextConverter;
 import org.bukkit.Location;
 
 public class DigitalClock extends AbstractClock {
@@ -12,12 +13,6 @@ public class DigitalClock extends AbstractClock {
 
     @Override
     public void renderTime() {
-        // TODO - Convert string into blocks
-        int offset = 0;
-
-        for (char c : time.toCharArray()) {
-            location.getWorld().setBlockData(new Location(location.getWorld(), location.getBlockX() + offset, location.getBlockY(), location.getBlockZ()), ZaksIncClocks.getClocksConfig().fontBlock);
-            offset++;
-        }
+        TextConverter.buildText(time, location);
     }
 }

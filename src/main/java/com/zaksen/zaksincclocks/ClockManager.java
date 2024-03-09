@@ -1,18 +1,16 @@
 package com.zaksen.zaksincclocks;
 
-import com.zaksen.zaksincclocks.clock.IClock;
-import com.zaksen.zaksincclocks.command.ClocksCommand;
+import com.zaksen.zaksincclocks.clock.Clock;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
-import java.sql.Time;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TimeZone;
 
 public class ClockManager {
-    private final List<IClock> clockList = new ArrayList<>();
+    private final List<Clock> clockList = new ArrayList<>();
     private TimeZone timeZone;
     private BukkitTask clockTask = null;
 
@@ -20,7 +18,7 @@ public class ClockManager {
         // Ignore
     }
 
-    public void addClock(IClock clock) {
+    public void addClock(Clock clock) {
         clockList.add(clock);
     }
 

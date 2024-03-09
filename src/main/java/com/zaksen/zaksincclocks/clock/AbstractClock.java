@@ -2,7 +2,7 @@ package com.zaksen.zaksincclocks.clock;
 
 import org.bukkit.Location;
 
-public abstract class AbstractClock implements IClock {
+public abstract class AbstractClock implements Clock {
 
     protected String time;
     protected Location location;

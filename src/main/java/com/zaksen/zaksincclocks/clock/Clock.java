@@ -1,6 +1,6 @@
 package com.zaksen.zaksincclocks.clock;
 
-public interface IClock {
+public interface Clock {
 
     void updateTime(String time);
 
