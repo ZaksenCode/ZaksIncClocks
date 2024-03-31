@@ -7,6 +7,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ClocksConfig {
     public final String timeZone;
@@ -19,8 +20,8 @@ public class ClocksConfig {
     public final int charGap;
 
     public ClocksConfig(FileConfiguration config) {
-        timeZone = config.getString("time-zone");
-        timeFormat = config.getString("time-format");
+        timeZone = Objects.requireNonNull(config.getString("time-zone"));
+        timeFormat = Objects.requireNonNull(config.getString("time-format"));
 
         // TODO - Auto load all strings from messages
         // Maybe work?

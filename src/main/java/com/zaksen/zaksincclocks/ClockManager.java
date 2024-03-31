@@ -1,18 +1,15 @@
 package com.zaksen.zaksincclocks;
 
 import com.zaksen.zaksincclocks.clock.Clock;
-import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scheduler.BukkitTask;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TimeZone;
+import java.util.*;
 
 public class ClockManager {
+    public static final Timer timer = new Timer();
     private final List<Clock> clockList = new ArrayList<>();
     private TimeZone timeZone;
-    private BukkitTask clockTask = null;
+    private TimerTask clockTask = null;
 
     public ClockManager() {
         // Ignore
@@ -26,10 +23,10 @@ public class ClockManager {
         timeZone = TimeZone.getTimeZone(ZaksIncClocks.getClocksConfig().timeZone);
 
         if (clockTask == null) {
-            clockTask = new BukkitRunnable() {
+
+            timer.scheduleAtFixedRate(clockTask = new TimerTask() {
                 @Override
                 public void run() {
-                    // Count time
                     LocalTime localTime = LocalTime.now(timeZone.toZoneId());
 
                     String newTime = ZaksIncClocks.getClocksConfig().timeFormat
@@ -43,7 +40,7 @@ public class ClockManager {
                         clock.renderTime();
                     });
                 }
-            }.runTaskTimer(ZaksIncClocks.getInstance(), 0, 10);
+            }, 0, 500);
         }
     }
 
